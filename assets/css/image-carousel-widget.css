@@ -1,0 +1,101 @@
+.mmm-image-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.mmm-image-carousel .swiper-slide {
+    height: auto;
+}
+
+.mmm-carousel-image img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+/* .mmm-image-carousel .swiper-button-next:after,
+.mmm-image-carousel .swiper-button-prev:after {
+    font-size: 18px;
+    color: #000;
+} */
+
+.mmm-image-carousel.vertical-mode .swiper-wrapper {
+    height: 100%;
+}
+
+.mmm-image-carousel {
+    overflow: hidden;
+}
+
+.mmm-image-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+/* .swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: inherit;
+} */
+
+
+.mmm-image-carousel-wrapper {
+    position: relative;
+}
+
+.mmm-image-carousel {
+    position: relative;
+}
+
+.mmm-image-carousel .swiper-wrapper {
+    overflow: visible;
+}
+
+.mmm-image-carousel .swiper-slide {
+    overflow: hidden;
+}
+
+.mmm-image-carousel.arrow-outside {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mmm-image-carousel.arrow-outside .swiper-button-prev {
+    left: 10px;
+}
+
+.mmm-image-carousel.arrow-outside .swiper-button-next {
+    right: 10px;
+}
+
+.mmm-image-carousel.pagination-outside {
+    padding-bottom: 40px;
+}
+
+.mmm-image-carousel.pagination-outside .swiper-pagination {
+    bottom: 0 !important;
+}
+.mmm-carousel-image {
+    position: relative;
+}
+
+.mmm-carousel-content {
+    position: absolute;
+
+    left: 20px;
+    bottom: 20px;
+
+    z-index: 5;
+
+    color: #fff;
+}
+
+.mmm-carousel-title {
+    margin: 0 0 10px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.mmm-carousel-description {
+    font-size: 16px;
+    line-height: 1.5;
+}

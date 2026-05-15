@@ -1,0 +1,775 @@
+/* My Mega Menu — Admin CSS v4.1.0 */
+
+.mmm-wrap {
+
+padding: 5px 0 3px;
+
+clear: both;
+
+}
+
+
+
+.mmm-open-btn {
+
+display: inline-flex !important;
+
+align-items: center;
+
+gap: 5px;
+
+background: #f6f7f7 !important;
+
+border: 1px solid #ccc !important;
+
+color: #50575e !important;
+
+padding: 3px 10px !important;
+
+font-size: 12px !important;
+
+border-radius: 3px !important;
+
+cursor: pointer;
+
+transition: all 0.15s;
+
+}
+
+
+
+.mmm-open-btn:hover {
+
+background: #f0f0f1 !important;
+
+border-color: #999 !important;
+
+}
+
+
+
+.mmm-open-btn.mmm-active {
+
+background: #0073aa !important;
+
+border-color: #006799 !important;
+
+color: #fff !important;
+
+}
+
+
+
+.mmm-open-btn.mmm-active:hover {
+
+background: #006799 !important;
+
+}
+
+
+
+#mmm-overlay {
+
+display: none;
+
+position: fixed;
+
+inset: 0;
+
+background: rgba(0, 0, 0, 0.6);
+
+z-index: 999999;
+
+align-items: center;
+
+justify-content: center;
+
+}
+
+
+
+#mmm-overlay.is-open {
+
+display: flex;
+
+}
+
+
+
+#mmm-modal {
+
+background: #fff;
+
+border-radius: 6px;
+
+width: 600px;
+
+max-width: 95vw;
+
+max-height: 90vh;
+
+display: flex;
+
+flex-direction: column;
+
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+
+animation: mmmIn 0.2s ease;
+
+overflow: hidden;
+
+}
+
+
+
+@keyframes mmmIn {
+
+from {
+
+    opacity: 0;
+
+    transform: scale(0.96) translateY(-10px);
+
+}
+
+
+
+to {
+
+    opacity: 1;
+
+    transform: scale(1) translateY(0);
+
+}
+
+}
+
+
+
+.mmm-head {
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+padding: 13px 16px;
+
+background: #f6f7f7;
+
+border-bottom: 1px solid #dcdcde;
+
+flex-shrink: 0;
+
+}
+
+
+
+.mmm-head h3 {
+
+margin: 0;
+
+font-size: 14px;
+
+font-weight: 600;
+
+color: #1d2327;
+
+display: flex;
+
+align-items: center;
+
+gap: 8px;
+
+}
+
+
+
+.mmm-head-icon {
+
+width: 24px;
+
+height: 24px;
+
+background: #0073aa;
+
+color: #fff;
+
+border-radius: 4px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+font-size: 12px;
+
+flex-shrink: 0;
+
+}
+
+
+
+.mmm-close-btn {
+
+background: none;
+
+border: none;
+
+color: #999;
+
+font-size: 22px;
+
+cursor: pointer;
+
+line-height: 1;
+
+padding: 2px 6px;
+
+border-radius: 3px;
+
+transition: all 0.15s;
+
+}
+
+
+
+.mmm-close-btn:hover {
+
+background: #e5e5e5;
+
+color: #333;
+
+}
+
+
+
+.mmm-tabs {
+
+display: flex;
+
+background: #fafafa;
+
+border-bottom: 1px solid #dcdcde;
+
+flex-shrink: 0;
+
+}
+
+
+
+.mmm-tab {
+
+padding: 8px 16px;
+
+font-size: 13px;
+
+color: #646970;
+
+cursor: pointer;
+
+border: none;
+
+border-bottom: 2px solid transparent;
+
+background: none;
+
+transition: all 0.15s;
+
+font-weight: 500;
+
+}
+
+
+
+.mmm-tab:hover {
+
+color: #0073aa;
+
+}
+
+
+
+.mmm-tab.is-on {
+
+color: #0073aa;
+
+border-bottom-color: #0073aa;
+
+background: #fff;
+
+}
+
+
+
+.mmm-body {
+
+padding: 16px;
+
+overflow-y: auto;
+
+flex: 1;
+
+}
+
+
+
+.mmm-toggle-row {
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+padding: 11px 13px;
+
+background: #f6f7f7;
+
+border: 1px solid #dcdcde;
+
+border-radius: 4px;
+
+margin-bottom: 14px;
+
+}
+
+
+
+.mmm-tgl-text strong {
+
+display: block;
+
+font-size: 13px;
+
+color: #1d2327;
+
+margin-bottom: 1px;
+
+}
+
+
+
+.mmm-tgl-text span {
+
+font-size: 12px;
+
+color: #787c82;
+
+}
+
+
+
+.mmm-switch {
+
+position: relative;
+
+width: 40px;
+
+height: 20px;
+
+flex-shrink: 0;
+
+}
+
+
+
+.mmm-switch input {
+
+opacity: 0;
+
+width: 0;
+
+height: 0;
+
+position: absolute;
+
+}
+
+
+
+.mmm-slider {
+
+position: absolute;
+
+inset: 0;
+
+background: #ccc;
+
+border-radius: 20px;
+
+cursor: pointer;
+
+transition: background 0.25s;
+
+}
+
+
+
+.mmm-slider:before {
+
+content: '';
+
+position: absolute;
+
+height: 14px;
+
+width: 14px;
+
+left: 3px;
+
+bottom: 3px;
+
+background: #fff;
+
+border-radius: 50%;
+
+transition: transform 0.25s;
+
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+.mmm-switch input:checked+.mmm-slider {
+
+background: #00a32a;
+
+}
+
+
+
+.mmm-switch input:checked+.mmm-slider:before {
+
+transform: translateX(20px);
+
+}
+
+
+
+.mmm-badge {
+
+font-size: 12px;
+
+font-weight: 600;
+
+padding: 5px 10px;
+
+border-radius: 3px;
+
+margin-bottom: 12px;
+
+display: none;
+
+}
+
+
+
+.mmm-badge.is-on {
+
+display: block;
+
+color: #00a32a;
+
+background: #edfaef;
+
+border: 1px solid #68de7c;
+
+}
+
+
+
+.mmm-badge.is-off {
+
+display: block;
+
+color: #d63638;
+
+background: #fcf0f1;
+
+border: 1px solid #f86368;
+
+}
+
+
+
+.mmm-editor-label {
+
+font-size: 12px;
+
+font-weight: 600;
+
+color: #1d2327;
+
+text-transform: uppercase;
+
+letter-spacing: 0.5px;
+
+margin-bottom: 6px;
+
+}
+
+
+
+#mmm-content-editor {
+
+width: 100%;
+
+min-height: 220px;
+
+font-family: monospace;
+
+font-size: 13px;
+
+line-height: 1.6;
+
+padding: 10px;
+
+border: 1px solid #dcdcde;
+
+border-radius: 4px;
+
+resize: vertical;
+
+box-sizing: border-box;
+
+color: #1d2327;
+
+background: #fff;
+
+}
+
+
+
+#mmm-content-editor:focus {
+
+outline: none;
+
+border-color: #0073aa;
+
+box-shadow: 0 0 0 1px #0073aa;
+
+}
+
+
+
+#mmm-content-editor.is-disabled {
+
+background: #f6f7f7;
+
+color: #999;
+
+cursor: not-allowed;
+
+}
+
+
+
+.mmm-toolbar {
+
+display: flex;
+
+gap: 4px;
+
+margin-bottom: 6px;
+
+flex-wrap: wrap;
+
+}
+
+
+
+.mmm-tool-btn {
+
+padding: 4px 10px;
+
+background: #f6f7f7;
+
+border: 1px solid #ccc;
+
+border-radius: 3px;
+
+font-size: 12px;
+
+cursor: pointer;
+
+color: #1d2327;
+
+transition: all 0.15s;
+
+font-weight: 600;
+
+}
+
+
+
+.mmm-tool-btn:hover {
+
+background: #e5e5e5;
+
+}
+
+
+
+.mmm-preview-area {
+
+margin-top: 10px;
+
+padding: 12px;
+
+border: 1px dashed #ccc;
+
+border-radius: 4px;
+
+min-height: 60px;
+
+background: #fafafa;
+
+font-size: 13px;
+
+color: #333;
+
+display: none;
+
+}
+
+
+
+.mmm-preview-area.is-on {
+
+display: block;
+
+}
+
+
+
+.mmm-preview-label {
+
+font-size: 11px;
+
+color: #999;
+
+text-transform: uppercase;
+
+letter-spacing: 0.5px;
+
+margin-bottom: 6px;
+
+font-weight: 600;
+
+}
+
+
+
+.mmm-foot {
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+padding: 11px 16px;
+
+background: #f6f7f7;
+
+border-top: 1px solid #dcdcde;
+
+flex-shrink: 0;
+
+}
+
+
+
+.mmm-foot-left {
+
+font-size: 12px;
+
+color: #787c82;
+
+}
+
+
+
+.mmm-foot-right {
+
+display: flex;
+
+gap: 8px;
+
+}
+
+
+
+.mmm-btn-cancel {
+
+padding: 6px 14px;
+
+background: none;
+
+border: 1px solid #ccc;
+
+border-radius: 3px;
+
+font-size: 13px;
+
+color: #646970;
+
+cursor: pointer;
+
+transition: all 0.15s;
+
+}
+
+
+
+.mmm-btn-cancel:hover {
+
+background: #f0f0f1;
+
+color: #333;
+
+}
+
+
+
+.mmm-btn-save {
+
+padding: 6px 16px;
+
+background: #0073aa;
+
+border: 1px solid #006799;
+
+border-radius: 3px;
+
+font-size: 13px;
+
+color: #fff;
+
+cursor: pointer;
+
+transition: background 0.15s;
+
+}
+
+
+
+.mmm-btn-save:hover {
+
+background: #006799;
+
+}
+
+
+
+.mmm-btn-save.is-saving {
+
+background: #787c82;
+
+cursor: wait;
+
+}

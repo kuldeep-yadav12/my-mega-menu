@@ -1,0 +1,356 @@
+/* ============================================
+   MY MEGA MENU — Frontend Styles v1.0.1
+   ============================================ */
+
+.mmm-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.mmm-nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mmm-nav > .mmm-item {
+    position: static;
+
+
+    list-style: none;
+}
+.mmm-nav > .mmm-item > a {
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    gap: 6px;
+
+
+    text-decoration: none;
+
+
+    white-space: nowrap;
+
+
+    transition: color 0.25s ease, background-color 0.25s ease;
+
+
+    cursor: pointer;
+
+
+}
+
+
+.mmm-arrow {
+
+
+    font-size: 9px;
+
+
+    transition: transform 0.25s ease;
+
+
+    display: inline-block;
+
+
+}
+
+
+
+
+
+.mmm-item.mmm-open > a .mmm-arrow,
+
+
+.mmm-item:hover > a .mmm-arrow {
+
+
+    transform: rotate(180deg);
+
+
+}
+
+
+
+
+
+/* ── Dropdown ── */
+
+
+.mmm-dropdown {
+
+
+    display: none;
+
+
+    position: absolute;
+
+
+    top: 100%;
+
+
+    left: 0;
+
+
+    min-width: 280px;
+
+
+    z-index: 99999;
+
+
+    background: #fff;
+
+
+    border-top: 3px solid #0073aa;
+
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+
+
+}
+
+
+
+
+
+.mmm-dropdown.mmm-fullwidth {
+
+
+    left: 50%;
+
+
+    transform: translateX(-50%);
+
+
+    width: 100vw;
+
+
+    max-width: 1200px;
+
+
+}
+
+
+
+
+
+/* Desktop hover */
+
+
+@media (min-width: 769px) {
+
+
+    .mmm-item:hover > .mmm-dropdown {
+
+
+        display: block;
+
+
+    }
+
+
+}
+
+
+
+
+
+/* Mobile JS se toggle */
+
+
+.mmm-item.mmm-open > .mmm-dropdown {
+
+
+    display: block;
+
+
+}
+
+
+
+
+
+/* ── Grid Columns ── */
+
+
+.mmm-dropdown-inner {
+
+
+    display: grid;
+
+
+    gap: 20px;
+
+
+}
+
+
+
+
+
+.mmm-cols-1 { grid-template-columns: 1fr; }
+
+
+.mmm-cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+
+.mmm-cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+
+.mmm-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+
+
+
+
+/* ── Content inside dropdown ── */
+
+
+.mmm-dropdown-inner a {
+
+
+    display: block;
+
+
+    padding: 5px 0;
+
+
+    text-decoration: none;
+
+
+    color: #444;
+
+
+    transition: color 0.2s, padding-left 0.2s;
+
+
+}
+
+
+.mmm-dropdown-inner a:hover {
+
+
+    color: #0073aa;
+
+
+    padding-left: 5px;
+
+
+}
+
+
+.mmm-dropdown-inner ul {
+
+
+    list-style: none;
+
+
+    padding: 0;
+
+
+    margin: 0;
+
+
+}
+
+
+.mmm-dropdown-inner h3,
+
+
+.mmm-dropdown-inner h4 {
+
+
+    margin: 0 0 10px;
+
+
+    font-size: 13px;
+
+
+    font-weight: 700;
+
+
+    text-transform: uppercase;
+
+
+    letter-spacing: 0.5px;
+
+
+    color: #0073aa;
+
+
+    padding-bottom: 8px;
+
+
+    border-bottom: 1px solid #eee;
+
+
+}
+
+
+
+
+
+/* ── Mobile ── */
+
+
+@media (max-width: 768px) {
+
+
+    .mmm-nav { flex-direction: column; }
+
+
+
+
+
+    .mmm-dropdown {
+
+
+        position: static !important;
+
+
+        width: 100% !important;
+
+
+        transform: none !important;
+
+
+        box-shadow: none;
+
+
+        border-top: none;
+
+
+        border-left: 3px solid #0073aa;
+
+
+    }
+
+
+
+
+
+    .mmm-cols-2,
+
+
+    .mmm-cols-3,
+
+
+    .mmm-cols-4 {
+
+
+        grid-template-columns: 1fr;
+
+
+    }
+
+
+}
+
+
