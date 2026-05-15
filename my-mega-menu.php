@@ -1,7 +1,6 @@
 <?php
 
 /**
-
  * Plugin Name: Mega Menu
  * Plugin URI: https://github.com/kuldeep-yadav12/my-mega-menu
  * Description: Custom Mega Menu for Elementor - Works on all hosting
