@@ -3,7 +3,7 @@
 /**
 
  * Plugin Name: Mega Menu
- * Plugin URI: https://example.com
+ * Plugin URI: https://github.com/kuldeep-yadav12/my-mega-menu
  * Description: Custom Mega Menu for Elementor - Works on all hosting
  * Version: 4.1.1
  * Author: Kuldeep TMB
@@ -19,27 +19,6 @@ define('MMM_VERSION', '4.1.1');
 define('MMM_PATH', plugin_dir_path(__FILE__));
 define('MMM_URL', plugin_dir_url(__FILE__));
 
-// Plugin Update Checker
-
-// Plugin Update Checker
-
-if (file_exists(MMM_PATH . 'plugin-update-checker/plugin-update-checker.php')) {
-
-    require_once MMM_PATH . 'plugin-update-checker/plugin-update-checker.php';
-
-    if (class_exists('YahnisElsts\\PluginUpdateChecker\\v5\\PucFactory')) {
-
-        $updateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
-            'https://github.com/kuldeep-yadav12/my-mega-menu',
-            __FILE__,
-            'my-mega-menu'
-        );
-
-        $updateChecker->setBranch('main');
-
-        $updateChecker->getVcsApi()->enableReleaseAssets();
-    }
-}
 /**
 
  * On plugins_loaded load only Storage, Admin, Ajax
@@ -59,8 +38,11 @@ if (
 
 if (version_compare(PHP_VERSION, '7.4', '<')) {
     add_action('admin_notices', function () {
-        echo '<div class="notice notice-error"><p>';
-        echo 'Mega Menu requires PHP 7.4 or higher.';
+        printf(
+            '<div class="notice notice-error"><p>%s</p></div>',
+            esc_html__('Mega Menu requires PHP 7.4 or higher.', 'my-mega-menu')
+        );
+        echo esc_html__('Mega Menu requires PHP 7.4 or higher.', 'my-mega-menu');
         echo '</p></div>';
     });
     return;
