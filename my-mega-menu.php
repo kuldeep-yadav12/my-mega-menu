@@ -5,7 +5,7 @@
  * Plugin Name: Mega Menu
  * Plugin URI: https://example.com
  * Description: Custom Mega Menu for Elementor - Works on all hosting
- * Version: 4.1.0
+ * Version: 4.1.1
  * Author: Kuldeep TMB
  * License: GPL2
  * Text Domain: my-mega-menu
@@ -15,7 +15,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-define('MMM_VERSION', '4.1.0');
+define('MMM_VERSION', '4.1.1');
 define('MMM_PATH', plugin_dir_path(__FILE__));
 define('MMM_URL', plugin_dir_url(__FILE__));
 
