@@ -21,22 +21,24 @@ define('MMM_URL', plugin_dir_url(__FILE__));
 
 // Plugin Update Checker
 
-// require_once MMM_PATH . 'plugin-update-checker/plugin-update-checker.php';
-
-// $updateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
-//     'https://github.com/YOUR_GITHUB_USERNAME/my-mega-menu/',
-//     __FILE__,
-//     'my-mega-menu'
-// );
-
-// $updateChecker->setBranch('main');
-
-// $updateChecker->getVcsApi()->enableReleaseAssets();
+// Plugin Update Checker
 
 if (file_exists(MMM_PATH . 'plugin-update-checker/plugin-update-checker.php')) {
 
     require_once MMM_PATH . 'plugin-update-checker/plugin-update-checker.php';
 
+    if (class_exists('YahnisElsts\\PluginUpdateChecker\\v5\\PucFactory')) {
+
+        $updateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+            'https://github.com/kuldeep-yadav12/my-mega-menu',
+            __FILE__,
+            'my-mega-menu'
+        );
+
+        $updateChecker->setBranch('main');
+
+        $updateChecker->getVcsApi()->enableReleaseAssets();
+    }
 }
 /**
 
