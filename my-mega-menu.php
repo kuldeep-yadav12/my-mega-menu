@@ -42,16 +42,6 @@ if (version_compare(PHP_VERSION, '7.4', '<')) {
     return;
 }
 
-add_action('plugins_loaded', 'mmm_load_textdomain');
-
-function mmm_load_textdomain(){
-    load_plugin_textdomain(
-        'my-mega-menu',
-        false,
-        dirname(plugin_basename(__FILE__)) . '/languages'
-    );
-}
-
 add_action('plugins_loaded', 'mmm_init', 20);
 
 function mmm_init(){

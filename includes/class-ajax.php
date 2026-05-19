@@ -23,6 +23,7 @@ class MMM_Ajax{
 
     // ✅ MAIN FUNCTION (FIXED)
     public static function get_elementor_template(){
+        check_ajax_referer('mmm_nonce', 'nonce');
         self::verify();
         $item_id = isset($_POST['item_id']) ? intval($_POST['item_id']) : 0;
         if (! $item_id) {
@@ -61,6 +62,7 @@ class MMM_Ajax{
     }
 
     public static function toggle(){
+        check_ajax_referer('mmm_nonce', 'nonce');
         self::verify();
         $item_id = isset($_POST['item_id']) ? intval($_POST['item_id']) : 0;
         $enabled = isset($_POST['enabled']) && $_POST['enabled'] === '1';
@@ -72,6 +74,7 @@ class MMM_Ajax{
     }
 
     public static function get_data(){
+        check_ajax_referer('mmm_nonce', 'nonce');
         self::verify();
         $item_id = isset($_POST['item_id']) ? intval($_POST['item_id']) : 0;
         if (! $item_id) {
