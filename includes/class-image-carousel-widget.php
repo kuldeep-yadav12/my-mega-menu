@@ -1,33 +1,26 @@
 <?php
-
     if (! defined('ABSPATH')) {
     exit;
     }
 
-    class MMM_Image_Carousel_Widget extends \Elementor\Widget_Base
-    {
-
-    public function get_name()
-    {
+    class MMM_Image_Carousel_Widget extends \Elementor\Widget_Base{
+    public function get_name(){
         return 'mmm-image-carousel';
     }
 
-    public function get_title()
-    {
+    public function get_title(){
         return 'Custom Image Carousel';
     }
 
-    public function get_icon()
-    {
+    public function get_icon(){
         return 'eicon-slider-push';
     }
 
-    public function get_categories()
-    {
+    public function get_categories(){
         return ['my-mega-menu'];
     }
-    protected function register_controls()
-    {
+
+    protected function register_controls(){
         $this->start_controls_section(
             'section_content',
             [
@@ -36,7 +29,6 @@
         );
 
         $repeater = new \Elementor\Repeater();
-
         $repeater->add_control(
             'image',
             [
@@ -52,9 +44,7 @@
             'heading',
             [
                 'label'   => 'Heading',
-
                 'type'    => \Elementor\Controls_Manager::TEXT,
-
                 'default' => 'Carousel Heading',
             ]
         );
@@ -63,9 +53,7 @@
             'description',
             [
                 'label'   => 'Description',
-
                 'type'    => \Elementor\Controls_Manager::TEXTAREA,
-
                 'default' => 'Carousel description text.',
             ]
         );
@@ -92,7 +80,6 @@
 
         $this->end_controls_section();
         // SETTINGS
-
         $this->start_controls_section(
             'section_settings',
             [
@@ -271,12 +258,7 @@
             ]
         );
        
-        /*
-|--------------------------------------------------------------------------
-| IMAGE STYLE CONTROLS
-|--------------------------------------------------------------------------
-*/
-
+// IMAGE STYLE CONTROLS
         $this->add_responsive_control(
             'image_height',
             [
@@ -297,16 +279,12 @@
 
                     '{{WRAPPER}} .mmm-image-carousel'     =>
                     'height: {{SIZE}}{{UNIT}};',
-
                     '{{WRAPPER}} .swiper-wrapper'         =>
                     'height: 100%;',
-
                     '{{WRAPPER}} .swiper-slide'           =>
                     'height: 100%;',
-
                     '{{WRAPPER}} .mmm-carousel-image'     =>
                     'height: 100%;',
-
                     '{{WRAPPER}} .mmm-carousel-image img' =>
                     'height:100%; width:100%; object-fit:cover;',
                 ],
@@ -317,12 +295,9 @@
             'image_border_radius',
             [
                 'label'      => 'Border Radius',
-
                 'type'       =>
                 \Elementor\Controls_Manager::DIMENSIONS,
-
                 'size_units' => ['px', '%'],
-
                 'selectors'  => [
                     '{{WRAPPER}} .mmm-carousel-image img' =>
                     'border-radius:
@@ -340,7 +315,6 @@
                 'label'     => 'Object Fit',
                 'type'      => \Elementor\Controls_Manager::SELECT,
                 'default'   => 'cover',
-
                 'options'   => [
                     'cover'   => 'Cover',
                     'contain' => 'Contain',
@@ -357,7 +331,6 @@
         $this->end_controls_section();
 
 // add content style controls
-
          $this->start_controls_section(
             'content_style_section',
             [
@@ -369,9 +342,7 @@
             'heading_color',
             [
                 'label' => 'Heading Color',
-
                 'type' => \Elementor\Controls_Manager::COLOR,
-
                 'selectors' => [
                     '{{WRAPPER}} .mmm-carousel-title' =>
                     'color: {{VALUE}};',
@@ -381,7 +352,6 @@
         $this->add_group_control(\Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'heading_typography',
-
                 'selector' =>
                 '{{WRAPPER}} .mmm-carousel-title',
             ]
@@ -390,9 +360,7 @@
             'description_color',
             [
                 'label' => 'Description Color',
-
                 'type' => \Elementor\Controls_Manager::COLOR,
-
                 'selectors' => [
                     '{{WRAPPER}} .mmm-carousel-description' =>
                     'color: {{VALUE}};',
@@ -402,19 +370,13 @@
         $this->add_group_control(\Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'description_typography',
-
                 'selector' =>
                 '{{WRAPPER}} .mmm-carousel-description',
             ]
         );
 $this->end_controls_section();
 
-        /*
-|--------------------------------------------------------------------------
-| NAVIGATION STYLE SECTION
-|--------------------------------------------------------------------------
-*/
-
+    // NAVIGATION STYLE SECTION
         $this->start_controls_section(
             'navigation_style_section',
             [
@@ -423,12 +385,7 @@ $this->end_controls_section();
             ]
         );
 
-        /*
-|--------------------------------------------------------------------------
-| PAGINATION
-|--------------------------------------------------------------------------
-*/
-
+//  PAGINATION STYLE CONTROLS
         $this->add_control(
             'pagination_heading',
             [
@@ -441,11 +398,8 @@ $this->end_controls_section();
             'pagination_position',
             [
                 'label'   => 'Position',
-
                 'type'    => \Elementor\Controls_Manager::SELECT,
-
                 'default' => 'inside',
-
                 'options' => [
                     'inside'  => 'Inside',
                     'outside' => 'Outside',
@@ -457,11 +411,8 @@ $this->end_controls_section();
             'pagination_gap',
             [
                 'label'      => 'Space Between Dots',
-
                 'type'       => \Elementor\Controls_Manager::SLIDER,
-
                 'size_units' => ['px'],
-
                 'range'      => [
                     'px' => [
                         'min' => 0,
@@ -480,11 +431,8 @@ $this->end_controls_section();
             'pagination_size',
             [
                 'label'      => 'Size',
-
                 'type'       => \Elementor\Controls_Manager::SLIDER,
-
                 'size_units' => ['px'],
-
                 'range'      => [
                     'px' => [
                         'min' => 4,
@@ -493,9 +441,7 @@ $this->end_controls_section();
                 ],
 
                 'selectors'  => [
-
                     '{{WRAPPER}} .swiper-pagination-bullet' =>
-
                     'width: {{SIZE}}{{UNIT}};
              height: {{SIZE}}{{UNIT}};',
                 ],
@@ -506,9 +452,7 @@ $this->end_controls_section();
             'pagination_color',
             [
                 'label'     => 'Color',
-
                 'type'      => \Elementor\Controls_Manager::COLOR,
-
                 'selectors' => [
                     '{{WRAPPER}} .swiper-pagination-bullet' =>
                     'background: {{VALUE}};',
@@ -520,9 +464,7 @@ $this->end_controls_section();
             'pagination_active_color',
             [
                 'label'     => 'Active Color',
-
                 'type'      => \Elementor\Controls_Manager::COLOR,
-
                 'selectors' => [
                     '{{WRAPPER}} .swiper-pagination-bullet-active' =>
                     'background: {{VALUE}};',
@@ -534,11 +476,8 @@ $this->end_controls_section();
             'arrow_size',
             [
                 'label'      => 'Arrow Size',
-
                 'type'       => \Elementor\Controls_Manager::SLIDER,
-
                 'size_units' => ['px'],
-
                 'range'      => [
                     'px' => [
                         'min' => 10,
@@ -547,7 +486,6 @@ $this->end_controls_section();
                 ],
 
                 'selectors'  => [
-
                     '{{WRAPPER}} .swiper-button-next, {{WRAPPER}} .swiper-button-prev'             =>
                     'width: {{SIZE}}{{UNIT}};
                      height: {{SIZE}}{{UNIT}};',
@@ -561,11 +499,8 @@ $this->end_controls_section();
             'arrow_position',
             [
                 'label'   => 'Arrow Position',
-
                 'type'    => \Elementor\Controls_Manager::SELECT,
-
                 'default' => 'inside',
-
                 'options' => [
                     'inside'  => 'Inside',
                     'outside' => 'Outside',
@@ -577,13 +512,9 @@ $this->end_controls_section();
             'arrow_color',
             [
                 'label'     => 'Arrow Color',
-
                 'type'      => \Elementor\Controls_Manager::COLOR,
-
                 'selectors' => [
-
                     '{{WRAPPER}} .swiper-button-next:after, {{WRAPPER}} .swiper-button-prev:after' =>
-
                     'color: {{VALUE}};',
                 ],
             ]
@@ -593,208 +524,169 @@ $this->end_controls_section();
     }
     protected function render()
     {
-
         $settings    = $this->get_settings_for_display();
         $carousel_id = 'mmm-carousel-' . $this->get_id();
         ?>
 
 <div class="mmm-image-carousel-wrapper">
-
     <div class="swiper mmm-image-carousel
-<?php echo esc_attr($carousel_id); ?>
-<?php echo $settings['direction'] === 'vertical' ? ' vertical-mode' : ''; ?>
-<?php echo $settings['arrow_position'] === 'outside' ? ' arrow-outside' : ''; ?>
-<?php echo $settings['pagination_position'] === 'outside' ? ' pagination-outside' : ''; ?>">
+    <?php echo esc_attr($carousel_id); ?>
+    <?php echo $settings['direction'] === 'vertical' ? ' vertical-mode' : ''; ?>
+    <?php echo $settings['arrow_position'] === 'outside' ? ' arrow-outside' : ''; ?>
+    <?php echo $settings['pagination_position'] === 'outside' ? ' pagination-outside' : ''; ?>">
 
         <div class="swiper-wrapper">
-
             <?php foreach ($settings['slides'] as $slide): ?>
-
                 <div class="swiper-slide">
-
                     <div class="mmm-carousel-image">
-
                         <?php if (! empty($slide['link']['url'])): ?>
-
                             <a href="<?php echo esc_url($slide['link']['url']); ?>">
-
                         <?php endif; ?>
-
-                        <img
-                        src="<?php echo esc_url($slide['image']['url']); ?>"
-                        alt=""
-                        loading="lazy"
-                    >
-
-                        <?php if (! empty($slide['link']['url'])): ?>
-
-                            </a>
-
+                        <img src="<?php echo esc_url($slide['image']['url']); ?>" alt="" loading="lazy" >
+                        <?php if (! empty($slide['link']['url'])): ?></a>
                         <?php endif; ?>
-
                     </div>
                     <div class="mmm-carousel-content">
-
                         <?php if (! empty($slide['heading'])): ?>
-
                             <h3 class="mmm-carousel-title">
                                 <?php echo esc_html($slide['heading']); ?>
                             </h3>
-
                         <?php endif; ?>
-
                         <?php if (! empty($slide['description'])): ?>
-
                             <div class="mmm-carousel-description">
                                 <?php echo esc_html($slide['description']); ?>
                             </div>
-
                         <?php endif; ?>
-
                     </div>
                 </div>
-
             <?php endforeach; ?>
-
         </div>
-
-
         <?php if ($settings['navigation'] === 'yes'): ?>
-
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
-
         <?php endif; ?>
-
-
         <?php if ($settings['pagination'] === 'yes'): ?>
-
             <div class="swiper-pagination"></div>
-
         <?php endif; ?>
-
     </div>
-
 </div>
 <script>
-
-document.addEventListener('DOMContentLoaded', function () {
-
-    const carousel = document.querySelector('.<?php echo esc_js($carousel_id); ?>');
+     document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector(
+        '.<?php echo esc_js($carousel_id); ?>'
+    );
 
     if (!carousel || typeof Swiper === 'undefined') {
         return;
     }
 
     new Swiper(carousel, {
+        speed: <?php echo intval($settings['animation_speed']); ?>,
+        direction: '<?php echo $settings['direction'] === 'vertical'
+            ? 'vertical'
+            : 'horizontal'; ?>',
 
-    speed: <?php echo intval($settings['animation_speed']); ?>,
+        mousewheel: true,
 
-            direction:
-            '<?php echo $settings['direction'] === 'vertical'
-                         ? 'vertical'
-                         : 'horizontal'; ?>',
-            mousewheel: true,
-
-            lazy: <?php echo $settings['lazyload'] === 'yes'
-                              ? '{ loadPrevNext: true }'
-                              : 'false'; ?>,
-
-
+        lazy: <?php echo $settings['lazyload'] === 'yes'
+            ? '{ loadPrevNext: true }'
+            : 'false'; ?>,
         loop: <?php echo $settings['loop'] === 'yes'
-                          ? 'true'
-                          : 'false'; ?>,
-
+            ? 'true'
+            : 'false'; ?>,
         observer: true,
         observeParents: true,
-
         autoplay: {
             delay: <?php echo intval($settings['autoplay_speed']); ?>,
 
             disableOnInteraction:
-            <?php echo $settings['pause_on_interaction'] === 'yes'
-                        ? 'true'
-                        : 'false'; ?>,
-
+                <?php echo $settings['pause_on_interaction'] === 'yes'
+                    ? 'true'
+                    : 'false'; ?>,
             pauseOnMouseEnter:
-            <?php echo $settings['pause_on_hover'] === 'yes'
-                        ? 'true'
-                        : 'false'; ?>,
-                        reverseDirection:
-            <?php echo $settings['direction'] === 'right'
-                        ? 'true'
-                        : 'false'; ?>,
-                    },
-
+                <?php echo $settings['pause_on_hover'] === 'yes'
+                    ? 'true'
+                    : 'false'; ?>,
+            reverseDirection:
+                <?php echo $settings['direction'] === 'right'
+                    ? 'true'
+                    : 'false'; ?>,
+        },
         navigation: <?php echo $settings['navigation'] === 'yes'
-                                    ? json_encode([
-                                    'nextEl' => '.' . $carousel_id . ' .swiper-button-next',
-                                    'prevEl' => '.' . $carousel_id . ' .swiper-button-prev',
-                            ])
-                                : 'false'; ?>,
-
+            ? wp_json_encode(
+                [
+                    'nextEl' => '.' . $carousel_id . ' .swiper-button-next',
+                    'prevEl' => '.' . $carousel_id . ' .swiper-button-prev',
+                ]
+            )
+            : 'false'; ?>,
         pagination: <?php echo $settings['pagination'] === 'yes'
-                                    ? json_encode([
-                                    'el'        => '.' . $carousel_id . ' .swiper-pagination',
-                                    'clickable' => true,
-                            ])
-                                : 'false'; ?>,
+            ? wp_json_encode(
+                [
+                    'el'        => '.' . $carousel_id . ' .swiper-pagination',
+                    'clickable' => true,
+                ]
+            )
+            : 'false'; ?>,
 
-      breakpoints: {
+        breakpoints: {
+            0: {
+                slidesPerView:
+                    <?php echo ! empty($settings['slides_per_view_mobile'])
+                        ? floatval($settings['slides_per_view_mobile'])
+                        : 1.2; ?>,
+                spaceBetween:
+                    <?php echo ! empty($settings['space_between_mobile'])
+                        ? intval($settings['space_between_mobile'])
+                        : 10; ?>,
+                autoplay:
+                    <?php echo $settings['autoplay_mobile'] === 'yes'
+                        ? '{
+                            delay: ' . intval($settings['autoplay_delay']) . ',
+                            disableOnInteraction: false
+                        }'
+                        : 'false'; ?>,
+            },
 
-    0: {
-        slidesPerView: <?php echo ! empty($settings['slides_per_view_mobile'])
-                                   ? floatval($settings['slides_per_view_mobile'])
-                                   : 1.2; ?>,
-                                   spaceBetween: <?php echo ! empty($settings['space_between_mobile'])
-                                                             ? intval($settings['space_between_mobile'])
-                                                             : 10; ?>,
-                                                             autoplay: <?php echo $settings['autoplay_mobile'] === 'yes'
-                                                                                   ? '{
-                delay: ' . intval($settings['autoplay_delay']) . ',
-                disableOnInteraction: false
-            }'
-                                                                                   : 'false'; ?>,
-    },
+            768: {
+                slidesPerView:
+                    <?php echo ! empty($settings['slides_per_view_tablet'])
+                        ? floatval($settings['slides_per_view_tablet'])
+                        : 2.5; ?>,
+                spaceBetween:
+                    <?php echo ! empty($settings['space_between_tablet'])
+                        ? intval($settings['space_between_tablet'])
+                        : 15; ?>,
+                autoplay:
+                    <?php echo $settings['autoplay_tablet'] === 'yes'
+                        ? '{
+                            delay: ' . intval($settings['autoplay_delay']) . ',
+                            disableOnInteraction: false
+                        }'
+                        : 'false'; ?>,
+            },
 
-    768: {
-        slidesPerView: <?php echo ! empty($settings['slides_per_view_tablet'])
-                                   ? floatval($settings['slides_per_view_tablet'])
-                                   : 2.5; ?>,
-                                    spaceBetween: <?php echo ! empty($settings['space_between_tablet'])
-                                                              ? intval($settings['space_between_tablet'])
-                                                              : 15; ?>,
-                                                              autoplay: <?php echo $settings['autoplay_tablet'] === 'yes'
-                                                                                    ? '{
-                delay: ' . intval($settings['autoplay_delay']) . ',
-                disableOnInteraction: false
-            }'
-                                                                                    : 'false'; ?>,
-    },
-
-    1024: {
-        slidesPerView: <?php echo ! empty($settings['slides_per_view'])
-                                   ? floatval($settings['slides_per_view'])
-                                   : 3.5; ?>,
-                                   spaceBetween: <?php echo ! empty($settings['space_between'])
-                                                             ? intval($settings['space_between'])
-                                                             : 20; ?>,
-                                                             autoplay: <?php echo $settings['autoplay_desktop'] === 'yes'
-                                                                                   ? '{
-                delay: ' . intval($settings['autoplay_delay']) . ',
-                disableOnInteraction: false
-            }'
-                                                                                   : 'false'; ?>,
-    }
-
-},
-
+            1024: {
+                slidesPerView:
+                    <?php echo ! empty($settings['slides_per_view'])
+                        ? floatval($settings['slides_per_view'])
+                        : 3.5; ?>,
+                spaceBetween:
+                    <?php echo ! empty($settings['space_between'])
+                        ? intval($settings['space_between'])
+                        : 20; ?>,
+                autoplay:
+                    <?php echo $settings['autoplay_desktop'] === 'yes'
+                        ? '{
+                            delay: ' . intval($settings['autoplay_delay']) . ',
+                            disableOnInteraction: false
+                        }'
+                        : 'false'; ?>,
+            },
+        },
     });
-
 });
-
 </script>
-
 <?php
 }
 }

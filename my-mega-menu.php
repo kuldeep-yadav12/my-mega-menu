@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Mega Menu
  * Plugin URI: https://github.com/kuldeep-yadav12/my-mega-menu
@@ -19,13 +18,9 @@ define('MMM_PATH', plugin_dir_path(__FILE__));
 define('MMM_URL', plugin_dir_url(__FILE__));
 
 /**
-
  * On plugins_loaded load only Storage, Admin, Ajax
-
  * class-widget.php DO NOT load here
-
  * Widget will load only inside the elementor/widgets/register hook
-
  */
 
 if (
@@ -49,8 +44,7 @@ if (version_compare(PHP_VERSION, '7.4', '<')) {
 
 add_action('plugins_loaded', 'mmm_load_textdomain');
 
-function mmm_load_textdomain()
-{
+function mmm_load_textdomain(){
     load_plugin_textdomain(
         'my-mega-menu',
         false,
@@ -60,11 +54,7 @@ function mmm_load_textdomain()
 
 add_action('plugins_loaded', 'mmm_init', 20);
 
-function mmm_init()
-{
-
-    // Elementor check
-
+function mmm_init(){
     if (! did_action('elementor/loaded')) {
         add_action('admin_notices', 'mmm_no_elementor');
         return;
@@ -76,8 +66,7 @@ function mmm_init()
     require_once MMM_PATH . 'includes/class-ajax.php';
 }
 
-function mmm_no_elementor()
-{
+function mmm_no_elementor(){
     echo '<div class="notice notice-error is-dismissible"><p>';
     echo esc_html__('Elementor plugin is required.', 'my-mega-menu');
     echo '</p></div>';
@@ -90,8 +79,7 @@ function mmm_no_elementor()
 
 add_action('elementor/widgets/register', 'mmm_register_widget');
 
-function mmm_register_widget($widgets_manager)
-{
+function mmm_register_widget($widgets_manager){
     // Mega Menu Nav Widget
     $file = MMM_PATH . 'includes/class-widget.php';
     if (file_exists($file)) {
@@ -122,20 +110,16 @@ function mmm_register_widget($widgets_manager)
     // Image Carousel Widget
     $file4 = MMM_PATH . 'includes/class-image-carousel-widget.php';
     if (file_exists($file4)) {
-
         require_once $file4;
         if (class_exists('MMM_Image_Carousel_Widget')) {
             $widgets_manager->register(new MMM_Image_Carousel_Widget());
         }
     }
-
 }
 
 // Elementor category
-
 add_action('elementor/elements/categories_registered', 'mmm_add_category');
-function mmm_add_category($elements_manager)
-{
+function mmm_add_category($elements_manager){
     $elements_manager->add_category('my-mega-menu', [
         'title' => 'My Mega Menu',
         'icon'  => 'fa fa-bars',
@@ -144,10 +128,8 @@ function mmm_add_category($elements_manager)
 }
 
 // Frontend assets
-
 add_action('wp_enqueue_scripts', 'mmm_frontend_assets');
-function mmm_frontend_assets()
-{
+function mmm_frontend_assets(){
     wp_enqueue_style(
         'mmm-frontend',
         MMM_URL . 'assets/css/frontend.css',
@@ -178,7 +160,7 @@ function mmm_frontend_assets()
         '11.0.5'
     );
 
-// Swiper JS
+   // Swiper JS
     wp_enqueue_script(
         'swiper',
         MMM_URL . 'assets/vendor/swiper/swiper-bundle.min.js',
@@ -193,5 +175,4 @@ function mmm_frontend_assets()
         [],
         MMM_VERSION
     );
-
 }

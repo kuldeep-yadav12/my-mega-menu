@@ -13,12 +13,6 @@
     border-radius: 12px;
 }
 
-/* .mmm-image-carousel .swiper-button-next:after,
-.mmm-image-carousel .swiper-button-prev:after {
-    font-size: 18px;
-    color: #000;
-} */
-
 .mmm-image-carousel.vertical-mode .swiper-wrapper {
     height: 100%;
 }
@@ -31,12 +25,6 @@
     position: relative;
     overflow: hidden;
 }
-
-/* .swiper-button-next:after,
-.swiper-button-prev:after {
-    font-size: inherit;
-} */
-
 
 .mmm-image-carousel-wrapper {
     position: relative;
