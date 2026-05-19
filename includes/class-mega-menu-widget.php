@@ -605,7 +605,7 @@
 
 
 
-                        <a href="<?php echo $link_url; ?>"<?php echo $target; ?>>
+                        <a href="<?php echo esc_url($link_url); ?>"<?php echo esc_url($link_url); ?>>
 
 
 
