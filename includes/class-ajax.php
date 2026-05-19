@@ -178,7 +178,7 @@ class MMM_Ajax
 
         ]);
 
-        wp_send_json_success(['msg' => 'Saved!']);
+        wp_send_json_success(['msg' => esc_html__('Saved!', 'my-mega-menu')]);
 
     }
 
