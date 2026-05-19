@@ -3,7 +3,7 @@
 Contributors: kuldeep-yadav12
 Tags: mega menu, navigation, elementor
 Requires at least: 6.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 4.1.1
 License: GPLv2 or later

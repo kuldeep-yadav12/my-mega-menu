@@ -75,6 +75,7 @@ class MMM_Ajax
         $template_id = wp_insert_post([
 
             'post_title'  => sprintf(
+                /* translators: %d: Menu item ID */
                 __('Mega Menu %d', 'my-mega-menu'),
                 $item_id
             ),
